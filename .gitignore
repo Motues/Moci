@@ -1,0 +1,15 @@
+# build, output
+[Bb]uild/
+[Oo]ut/
+
+# some documents in the directories
+[Dd]oc/
+[Dd]ocs/
+
+# ide
+.vs
+.vscode
+.idea
+
+# thirdparty
+Thirdparties/
