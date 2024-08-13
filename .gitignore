@@ -11,6 +11,8 @@
 .vs
 .vscode
 .idea
+CMakeSettings.json
+Folder.DotSettings.user
 
 # thirdparty
 ThirdParties/
