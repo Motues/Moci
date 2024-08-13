@@ -4,6 +4,8 @@ project(Moci)
 
 find_package(fmt CONFIG REQUIRED)
 
-add_executable(test Sources/main.cpp)
+add_subdirectory(Sources/FirstLibrary)
+add_subdirectory(Sources/FirstModule)
 
-target_link_libraries(test PRIVATE fmt::fmt)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/Bin)
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/Bin)

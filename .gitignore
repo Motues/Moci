@@ -1,6 +1,7 @@
 # build, output
 [Bb]uild/
 [Oo]ut/
+[Bb]in/
 
 # some documents in the directories
 [Dd]oc/
@@ -12,4 +13,4 @@
 .idea
 
 # thirdparty
-Thirdparties/
+ThirdParties/

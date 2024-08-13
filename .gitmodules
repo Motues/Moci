@@ -1,0 +1,3 @@
+[submodule "ThirdParties/CangoMake"]
+	path = ThirdParties/CangoMake
+	url = https://github.com/TaciturnJian/CangoMake
