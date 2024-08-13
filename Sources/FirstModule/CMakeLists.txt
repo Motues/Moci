@@ -13,6 +13,3 @@ target_link_libraries(
     PRIVATE fmt::fmt
     PRIVATE FirstLibrary
 )
-
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../../Bin)
-set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../../Bin)
