@@ -1,5 +1,4 @@
 #include <FirstLibrary/algorithm.hpp>
-#include <iostream>
 
 namespace Moci {
 	void Graph::addEdge(int from, int to, int cost) {
@@ -33,7 +32,20 @@ namespace Moci {
 		}
 	}
 
-	void Graph::print() {
-		for (int i = 0; i < numVertex; i++) { std::cout << "dis[" << i << "] = " << dis[i] << std::endl; }
+	Graph::Graph(const int numVertex):
+		head(numVertex, -1),
+		dis(numVertex, INF),
+		numVertex(numVertex) {
+	}
+
+	void Graph::print() const {
+		std::cout << *this;
+	}
+
+	std::ostream& operator<<(std::ostream& stream, const Graph& graph) {
+		for (int i = 0; i < graph.numVertex; i++) {
+			stream << "dis[" << i << "] = " << graph.dis[i] << '\n';
+		}
+		return stream;
 	}
 }

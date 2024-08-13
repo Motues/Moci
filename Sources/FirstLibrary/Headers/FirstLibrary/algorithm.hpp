@@ -2,6 +2,7 @@
 
 #include <queue>
 #include <vector>
+#include <iostream>
 
 namespace Moci {
     constexpr int INF = 1e9;
@@ -11,13 +12,12 @@ namespace Moci {
     public:
         void addEdge(int from, int to, int cost);
         void dijkstra(int start);
-        void print();
 
-        explicit Graph(const int numVertex) :
-			head(numVertex, -1),
-			dis(numVertex, INF),
-			numVertex(numVertex) {
-        }
+        explicit Graph(int numVertex);
+
+        friend std::ostream& operator <<(std::ostream& stream, const Graph& graph);
+
+        void print() const;
 
     private:
         struct Edge {
