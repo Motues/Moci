@@ -4,8 +4,6 @@
 #include <queue>
 #include <vector>
 
-const int INF = 1e9;
-typedef std::pair<int, int> PII;
 
 
 class Graph {
@@ -17,6 +15,8 @@ class Graph {
             Edge edge = {0, 0, 0};
             edges.push_back(edge);
         };
+        using PII = std::pair<int, int>;
+        inline static constexpr int INF = 1e9;
     private:
         struct Edge {
             int to, next, cost;
