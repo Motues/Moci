@@ -15,10 +15,10 @@ public:
 
     DynamicDataPool(): Size(0), Memory(nullptr) {}
     DynamicDataPool(std::size_t Size): Size(Size), Memory((T*)malloc(Size * ElementSize)) {}
-    DynamicDataPool(DynamicDataPool& pool): Size(pool.Size), Memory((T*)malloc(pool.Size)) {
-        memcpy(Memory, pool.Memory, pool.Size);
+    DynamicDataPool(DynamicDataPool& pool): Size(pool.Size), Memory((T*)malloc(pool.Size * ElementSize)) {
+        memcpy(Memory, pool.Memory, pool.Size * ElementSize);
     }
-    DynamicDataPool(DynamicDataPool&& pool): Size(pool.Size), Memory(pool.Memory) {
+    DynamicDataPool(DynamicDataPool&& pool): Size(pool.Size), Memory(pool.Memory * ElementSize) {
         pool.Size = 0;
         pool.Memory = nullptr;
     }
@@ -30,7 +30,7 @@ public:
 template<typename T>
 void FillDataPool(DynamicDataPool<T>* pool, std::uint8_t value) {
     if (pool->Memory == nullptr) return;
-    memset(pool->Memory, value, pool->Size);
+    memset(pool->Memory, value, pool->Size * pool->ElementSize);
 }
 
 template<typename T>
